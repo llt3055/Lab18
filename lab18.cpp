@@ -38,6 +38,17 @@ int main() {
         getline(cin, newVal->comment);
         
         newVal->next = nullptr;
+
+        // Add the new node to the linked list based on the user's choice
+        if (choice_mode == 1) {
+            if (!head) {
+                head = newVal;
+            } else {
+                newVal->next = head;
+                head = newVal;
+            }
+        
+        }
         cout << "Enter another review? Y/N: ";
         cin >> again;
     }
