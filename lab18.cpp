@@ -36,6 +36,8 @@ int main() {
 
         cout << "Enter review comments: ";
         getline(cin, newVal->comment);
+
+        newVal->next = nullptr;
     
 
         // Add the new node to the linked list based on the user's choice
@@ -47,6 +49,9 @@ int main() {
                 head = newVal;
             }
         } else {
+            if (!head) {
+                head = newVal;
+            } else {
                 Node *current = head;
                 while (current->next) { 
                     current = current->next;
@@ -54,8 +59,15 @@ int main() {
                 current->next = newVal;
             }
         }
+
+        output(head);
+
+    
+    head = nullptr;
         cout << "Enter another review? Y/N: ";
         cin >> again;
+
+        return 0;
     }
 
 
