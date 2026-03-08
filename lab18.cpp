@@ -5,6 +5,7 @@
 using namespace std;
 
 struct Node {
+    float rating;
     string comment;
     Node* next;
 };
@@ -20,11 +21,24 @@ int main() {
     cout << "[2] New nodes are added at the tail of the linked list" << endl;
     cout << "Choice: ";
     cin >> choice;
-
-
     
+    
+}
 
-
-
+void output(Node *hd){
+    if(!hd) {
+        cout << "Empty list" << endl;
+        return;
+    }
+    cout << "Outputting all reviews:" << endl;
+    int count = 1;
+    float sum = 0;
+    Node *current = hd;
+    
+    while (current) {
+        cout << " > Review #" << count++ << ": " << current->rating << ": " << current->comment << endl;
+        sum += current->rating;
+        current = current->next;
+    }
     
 }
