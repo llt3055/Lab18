@@ -62,8 +62,14 @@ int main() {
 
         output(head);
 
-    
-    head = nullptr;
+    // Clean up memory
+    Node *current = head;
+    while (current) {
+        head = current->next;
+        delete current;
+        current = head;
+    }
+      head = nullptr;
         cout << "Enter another review? Y/N: ";
         cin >> again;
 
