@@ -8,3 +8,11 @@ struct Node {
     string comment;
     Node* next;
 };
+
+// Function prototypes
+void output(Node *);
+
+int main() {
+    
+    
+}
