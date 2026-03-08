@@ -40,5 +40,10 @@ void output(Node *hd){
         sum += current->rating;
         current = current->next;
     }
-    
+
+    // Calculate and output the average rating, excluding the first review
+    if (count > 1) {
+        cout << " > Average: " << fixed << setprecision(5) << (sum / (count - 1)) << endl;
+    }
+
 }
