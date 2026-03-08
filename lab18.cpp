@@ -14,6 +14,11 @@ struct Node {
 void output(Node *);
 
 int main() {
+
+    Node *head = nullptr;
+    int choice_mode;
+    char again = 'y';
+
     int choice;
 
     cout << "Which linked list method should we use?" << endl;
@@ -22,7 +27,20 @@ int main() {
     cout << "Choice: ";
     cin >> choice;
     
-    
+    while (again == 'y' || again == 'Y') {
+        Node *newVal = new Node;
+        
+        cout << "Enter review rating 0-5: ";
+        cin >> newVal->rating;
+        cin.ignore(); 
+
+        cout << "Enter review comments: ";
+        getline(cin, newVal->comment);
+        
+        newVal->next = nullptr;
+        cout << "Enter another review? Y/N: ";
+        cin >> again;
+    }
 }
 
 void output(Node *hd){
