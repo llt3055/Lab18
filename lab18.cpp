@@ -16,10 +16,8 @@ void output(Node *);
 int main() {
 
     Node *head = nullptr;
-    int choice_mode;
-    char again = 'y';
-
     int choice;
+    char again = 'y';
 
     cout << "Which linked list method should we use?" << endl;
     cout << "[1] New nodes are added at the head of the linked list" << endl;
@@ -36,12 +34,11 @@ int main() {
 
         cout << "Enter review comments: ";
         getline(cin, newVal->comment);
-
         newVal->next = nullptr;
     
 
         // Add the new node to the linked list based on the user's choice
-        if (choice_mode == 1) {
+        if (choice == 1) {
             if (!head) {
                 head = newVal;
             } else {
@@ -59,7 +56,7 @@ int main() {
                 current->next = newVal;
             }
         }
-
+    }
         output(head);
 
     // Clean up memory
